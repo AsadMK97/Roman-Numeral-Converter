@@ -9,12 +9,16 @@ def to_roman_numeral():
 def to_arabic_number():
     roman_input = input ("Enter roman number to convert: ")
 
-    if  roman_input == "I" :
-        print ("1") 
+    if  "I" in roman_input :
+        roman_input = (int(1))
+    elif "V" in roman_input :
+        roman_input = (int(5)) 
+    elif "X" in rom :
+        roman_input =(int(10))
     else:
      print("Invalid input")
 
-    print("Roman to Arabic converter")
+    print (roman_input)
 
 
 
