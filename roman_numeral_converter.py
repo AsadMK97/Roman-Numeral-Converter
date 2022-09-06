@@ -1,4 +1,5 @@
-from tester import printRoman
+from printRoman import printRoman
+from printArabic import to_arabic_number
 
 
 def to_roman_numeral():
@@ -6,27 +7,8 @@ def to_roman_numeral():
         user_num = int(input("Enter a number: "))
         print("Roman value is:", end = " ")
         printRoman(user_num)
-
-
-
-
-def to_arabic_number():
-    roman_input = input ("Enter roman number to convert: ")
-
-    if "I" in roman_input :
-        roman_input = (int(1))
-    elif "V" in roman_input :
-        roman_input = (int(5)) 
-    elif "X" in roman_input :
-        roman_input =(int(10))
     else:
-     print("Invalid input")
-
-    print (roman_input)
-
-
-
-
+        print("Invalid input")
 
 
 
