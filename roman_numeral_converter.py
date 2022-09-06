@@ -1,5 +1,5 @@
 from printRoman import printRoman
-from printArabic import to_arabic_number
+from printArabic import printArabic
 
 
 def to_roman_numeral():
@@ -10,6 +10,13 @@ def to_roman_numeral():
     else:
         print("Invalid input")
 
+def to_arabic_number():
+    if __name__ == "__main__":
+        user_input = input("Enter a numeral: ")
+        print("Arabic value is: ", end = "")
+        printArabic(user_input)
+    else:
+        print("Invalid input")
 
 
 converter_option = input("Select which converter to use: ")
