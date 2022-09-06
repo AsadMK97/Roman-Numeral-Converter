@@ -1,4 +1,4 @@
-def to_arabic_number():
+def printArabic(user_input):
     def value(romanNum):
         if (romanNum == 'I'):
             return 1
@@ -23,34 +23,20 @@ def to_arabic_number():
 
         while (i < len(user_input)):
 
-            # Getting value of symbol s[i]
             s1 = value(user_input[i])
 
             if (i + 1 < len(user_input)):
 
-                # Getting value of symbol s[i + 1]
                 s2 = value(user_input[i + 1])
 
-                # Comparing both values
                 if (s1 >= s2):
-
-                    # Value of current symbol is greater
-                    # or equal to the next symbol
                     res = res + s1
                     i = i + 1
                 else:
-
-                    # Value of current symbol is greater
-                    # or equal to the next symbol
                     res = res + s2 - s1
                     i = i + 2
             else:
                 res = res + s1
                 i = i + 1
-
         print (res)
-
-
-
-    user_input = input("Enter a numeral: ")
     process()
