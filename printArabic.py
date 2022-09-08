@@ -17,26 +17,26 @@ def printArabic(user_input):
         return -1
 
     def process():
-        res = 0
-        i = 0
+        result = 0
+        num = 0
 
-        while i < len(user_input):
+        while num < len(user_input):
 
-            s1 = value(user_input[i])
+            symbol_answer = value(user_input[num])
 
-            if i + 1 < len(user_input):
+            if num + 1 < len(user_input):
 
-                s2 = value(user_input[i + 1])
+                s2 = value(user_input[num + 1])
 
-                if s1 >= s2:
-                    res = res + s1
-                    i = i + 1
+                if symbol_answer >= s2:
+                    result = result + symbol_answer
+                    num = num + 1
                 else:
-                    res = res + s2 - s1
-                    i = i + 2
+                    result = result + s2 - symbol_answer
+                    num = num + 2
             else:
-                res = res + s1
-                i = i + 1
-        print(res)
+                result = result + symbol_answer
+                num = num + 1
+        print(result)
 
     process()
