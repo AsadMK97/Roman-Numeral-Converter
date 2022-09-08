@@ -1,4 +1,3 @@
-from sys import exec_prefix
 from printRoman import printRoman
 from printArabic import printArabic
 
