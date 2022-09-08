@@ -1,24 +1,23 @@
+from sys import exec_prefix
 from printRoman import printRoman
 from printArabic import printArabic
 
 
 def to_roman_numeral():
     if __name__ == "__main__":
-        user_num = int(input("Enter a number: "))
-        print("Roman value is:", end=" ")
-        printRoman(user_num)
-    else:
-        print("Invalid input")
-
+        user_num = input("Enter a number: ")
+        try:
+            roman_input = int(user_num)
+            print("Roman value is:", end=" ")
+            printRoman(roman_input)
+        except ValueError:
+            print("Invalid input")
 
 def to_arabic_number():
     if __name__ == "__main__":
         user_input = input("Enter a numeral: ")
         print("Arabic value is: ", end="")
         printArabic(user_input)
-    else:
-        print("Invalid input")
-
 
 converter_option = input("Select which converter to use: ")
 

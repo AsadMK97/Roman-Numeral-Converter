@@ -38,5 +38,6 @@ def printArabic(user_input):
                 result = result + symbol_answer
                 num = num + 1
         print(result)
+        # print (type(result))
 
     process()
