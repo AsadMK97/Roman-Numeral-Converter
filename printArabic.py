@@ -39,6 +39,8 @@ def printArabic(user_input):
                 num = num + 1
         if result == -2:
             print("Invalid input")
+        elif result == -1:
+            print("Invalid input")
         else:
             print(result)
         # print (type(result))

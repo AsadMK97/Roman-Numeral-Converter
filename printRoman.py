@@ -11,3 +11,10 @@ def printRoman(user_num):
             print(symbol[i], end="")
             div -= 1
         i -= 1
+
+
+def test_printRoman():
+    input = 1
+    expected_output = "I"
+    output = printRoman(input)
+    assert output == expected_output
