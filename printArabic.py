@@ -1,18 +1,18 @@
 def printArabic(user_input):
-    def value(romanNum):
-        if romanNum == "I":
+    def value(user_input):
+        if user_input == "I":
             return 1
-        if romanNum == "V":
+        if user_input == "V":
             return 5
-        if romanNum == "X":
+        if user_input == "X":
             return 10
-        if romanNum == "L":
+        if user_input == "L":
             return 50
-        if romanNum == "C":
+        if user_input == "C":
             return 100
-        if romanNum == "D":
+        if user_input == "D":
             return 500
-        if romanNum == "M":
+        if user_input == "M":
             return 1000
         return -1
 

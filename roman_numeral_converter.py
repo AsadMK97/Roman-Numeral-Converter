@@ -1,4 +1,4 @@
-import click
+# import click
 from printRoman import printRoman
 from printArabic import printArabic
 
@@ -19,49 +19,43 @@ def to_arabic_number(user_input):
         printArabic(user_input)
 
 
-# def converter_prompt(converter_option=None):
-#     if converter_option is None:
-#         converter_option = input("Select which converter to use: ")
+def converter_prompt(converter_option=None):
+    if converter_option is None:
+        converter_option = input("Select which converter to use: ")
 
-#     if converter_option == ("1"):
-#         user_num = input("Enter a number: ")
-#         to_roman_numeral(user_num)
-#     elif converter_option == ("2"):
-#         user_input = input("Enter a numeral: ")
-#         to_arabic_number(user_input)
-#     else:
-#         print("Invalid input")
-
-# converter_prompt()
-
-
-@click.command()
-@click.option(
-    "--converter",
-    prompt="Enter a converter to use: ",
-    help="""1 is roman to arabic.
-    2 is arabic to roman.""",
-)
-# @click.option('--roman', prompt='Enter a numeral', help='Enter a Roman numeral to convert into arabic')
-# @click.option('--arabic', prompt='Enter a number', help='Enter an Arabic number to conver into roman')
-def hello(converter):
-    if converter == "1":
+    if converter_option == ("1"):
         user_num = input("Enter a number: ")
         to_roman_numeral(user_num)
-    elif converter == "2":
+    elif converter_option == ("2"):
         user_input = input("Enter a numeral: ")
         to_arabic_number(user_input)
     else:
-        print("Invalid")
-# def convert(roman):
-#     user_num = roman
-#     to_arabic_number(user_num)
-# def converA(arabic):
-#     user_input = arabic
-#     to_roman_numeral(user_input)
-if __name__ == "__main__":
-    hello(None)
+        print("Invalid input")
 
+
+converter_prompt()
+
+
+# @click.command()
+# @click.option(
+#     "--converter",
+#     prompt="Enter a converter to use: ",
+#     help="""1 is roman to arabic.
+#     2 is arabic to roman.""",
+# )
+# @click.option('--roman', prompt='Enter a numeral', help='Enter a Roman numeral to convert into arabic')
+# @click.option('--arabic', prompt='Enter a number', help='Enter an Arabic number to conver into roman')
+# def hello(converter):
+#     if converter == "1":
+#         user_num = input("Enter a number: ")
+#         to_roman_numeral(user_num)
+#     elif converter == "2":
+#         user_input = input("Enter a numeral: ")
+#         to_arabic_number(user_input)
+#     else:
+#         print("Invalid")
+
+##################################################### TESTING CODE ######################################################
 
 # def test_to_roman_numeral_1_rta():
 #     # Given
