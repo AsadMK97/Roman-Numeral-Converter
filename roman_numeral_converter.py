@@ -4,36 +4,35 @@ from printArabic import printArabic
 
 
 def to_roman_numeral(user_num):
-    if __name__ == "__main__":
-        try:
-            roman_output = int(user_num)
-            print("Roman value is:", end=" ")
-            printRoman(roman_output)
-        except ValueError:
-            print("Invalid input")
-
-
-def to_arabic_number(user_input):
-    if __name__ == "__main__":
-        print("Arabic value is: ", end="")
-        printArabic(user_input)
-
-
-def converter_prompt(converter_option=None):
-    if converter_option is None:
-        converter_option = input("Select which converter to use: ")
-
-    if converter_option == ("1"):
-        user_num = input("Enter a number: ")
-        to_roman_numeral(user_num)
-    elif converter_option == ("2"):
-        user_input = input("Enter a numeral: ")
-        to_arabic_number(user_input)
-    else:
+    try:
+        roman_output = int(user_num)
+        print("Roman value is:", end=" ")
+        printRoman(roman_output)
+    except ValueError:
         print("Invalid input")
 
 
-converter_prompt()
+def to_arabic_number(user_input):
+    print("Arabic value is: ", end="")
+    printArabic(user_input)
+
+
+if __name__ == "__main__":
+
+    def converter_prompt(converter_option=None):
+        if converter_option is None:
+            converter_option = input("Select which converter to use: ")
+
+        if converter_option == ("1"):
+            user_num = input("Enter a number: ")
+            to_roman_numeral(user_num)
+        elif converter_option == ("2"):
+            user_input = input("Enter a numeral: ")
+            to_arabic_number(user_input)
+        else:
+            print("Invalid input")
+
+    converter_prompt()
 
 
 # @click.command()
@@ -57,14 +56,15 @@ converter_prompt()
 
 ##################################################### TESTING CODE ######################################################
 
-# def test_to_roman_numeral_1_rta():
-#     # Given
-#     input = 1
-#     excepted_output = "I"
-#     # When
-#     output = to_roman_numeral(input)
-#     # Then
-#     assert output == excepted_output
+
+def test_to_roman_numeral_1_rta():
+    # Given
+    input = 1
+    excepted_output = "I"
+    # When
+    output = to_roman_numeral(input)
+    # Then
+    assert output == excepted_output
 
 
 # def test_to_arabic_number_2009_rta():

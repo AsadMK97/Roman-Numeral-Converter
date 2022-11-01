@@ -1,48 +1,48 @@
-def printArabic(user_input):
-    def value(user_input):
-        if user_input == "I":
-            return 1
-        if user_input == "V":
-            return 5
-        if user_input == "X":
-            return 10
-        if user_input == "L":
-            return 50
-        if user_input == "C":
-            return 100
-        if user_input == "D":
-            return 500
-        if user_input == "M":
-            return 1000
-        return -1
+def printArabic(user_input: str) -> int:
+    roman_table = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
 
-    def process():
-        result = 0
-        num = 0
-
-        while num < len(user_input):
-
-            symbol_answer = value(user_input[num])
-
-            if num + 1 < len(user_input):
-
-                s2 = value(user_input[num + 1])
-
-                if symbol_answer >= s2:
-                    result = result + symbol_answer
-                    num = num + 1
-                else:
-                    result = result + s2 - symbol_answer
-                    num = num + 2
-            else:
-                result = result + symbol_answer
-                num = num + 1
-        if result == -2:
-            print("Invalid input")
-        elif result == -1:
-            print("Invalid input")
+    num = 0
+    last = "I"
+    for numeral in user_input[::-1]:
+        if roman_table[numeral] < roman_table[last]:
+            num -= roman_table[numeral]
         else:
-            print(result)
-        # print (type(result))
+            num += roman_table[numeral]
+        last = numeral
+    print (num)
+    return num
 
-    process()
+
+##################################################### UNIT TESTS ########################################################
+
+
+def test_printArabic():
+    input = "I"
+    expected_output = 1
+    output = printArabic(input)
+    assert output == expected_output
+
+
+def test_to_printArabic_1_rta():
+    """simple printArabic (I) == 1"""
+    assert printArabic("I") == 1
+
+
+def test_to_printArabic_2008_rta():
+    """multi printArabic (MMVIII) == 2008"""
+    assert printArabic("MMVIII") == 2008
+
+
+def test_to_printArabic_4_rta():
+    """simple subtraction printArabic (IV) == 4"""
+    assert printArabic("IV") == 4
+
+
+def test_to_printArabic_90_rta():
+    """subtraction printArabic (XC) == 90"""
+    assert printArabic("XC") == 90
+
+
+def test_to_printArabic_3999_rta():
+    """big printArabic (MMMCMXCIX) == 3999"""
+    assert printArabic("MMMCMXCIX") == 3999
