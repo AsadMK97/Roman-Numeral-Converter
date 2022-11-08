@@ -9,7 +9,7 @@ def printArabic(user_input: str) -> int:
         else:
             num += roman_table[numeral]
         last = numeral
-    print (num)
+    print(num)
     return num
 
 

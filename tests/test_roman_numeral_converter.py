@@ -1,12 +1,11 @@
-# import pytest
+# import roman_numeral_converter
+from printRoman import printRoman
+from printArabic import printArabic
 
-# import os
-# print(os.getcwd())
 
-import roman_numeral_converter
+def test_to_arabic_number_1_rta():
+    assert printArabic("I") == 1
 
-# def test_to_arabic_number_1_rta():
-#     assert to_arabic_number("I") == 1
 
 # # def test_to_arabic_number_2008_rta():
 # #     assert to_arabic_number("MMVIII") == 2008
@@ -17,6 +16,6 @@ def test_to_arabic_number_1():
     input = "I"
     excepted_output = 1
     # When
-    output = roman_numeral_converter.to_arabic_number(input)
+    output = printRoman(input)
     # Then
     assert output == excepted_output
